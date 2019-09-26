@@ -1,4 +1,5 @@
-package com.example.spring_config_client_refresh_eureka_bus.controller;
+package com.example.spring_config_client.controller;
+
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -12,14 +13,16 @@ public class WelcomeController
     @Value("${cn.springcloud.book.config}")
     private String serviceName;
 
-    @Value("${app.developer.name}")
-    private String serviceOne;
+//    @Value("${app.developer.name}")
+//    private String serviceOne;
 
-    @Value("${app.service-name}")
-    private String serviceTwo;
+//    @Value("${app.service-name}")
+//    private String serviceTwo;
 
     @GetMapping("/service")
     public String getServiceName() {
-        return "service name [ application:"  + this.serviceOne +  " , department-service: " + this.serviceTwo +" , config-info-dev:"+ this.serviceName +"] :" ;//+ this.serviceTwo;
+        return "service name [ application:"  + this.serviceName  +"] :" ;
     }
+
+
 }
